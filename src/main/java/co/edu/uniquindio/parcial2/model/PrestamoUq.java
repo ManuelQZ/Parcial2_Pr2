@@ -14,12 +14,11 @@ public class PrestamoUq {
 
     private ArrayList<Prestamo> listaPrestamos;
 
-    public PrestamoUq(String nombre, ArrayList<Objeto> listaObjetos) {
-        this.nombre = nombre;
+    public PrestamoUq() {
+        this.nombre = "Universidad del Quindio";
         this.listaClientes = new ArrayList<>();
         this.listaEmpleados = new ArrayList<>();
-        this.listaObjetos = listaObjetos;
-        this.listaPrestamos = new ArrayList<>();
+        this.listaObjetos = new ArrayList<>();
     }
 
     public void crearCliente(){

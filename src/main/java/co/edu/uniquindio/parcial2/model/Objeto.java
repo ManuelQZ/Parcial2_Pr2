@@ -2,12 +2,21 @@ package co.edu.uniquindio.parcial2.model;
 
 public class Objeto {
 
+    private String codigo;
     private String nombre;
     private Prestamo prestamoAsociado;
 
-    public Objeto(String nombre, Prestamo prestamoAsociado) {
+    private Estado estado;
+
+    public enum Estado {
+        DISPONIBLE,
+        NODISPONIBLE
+    }
+
+    public Objeto(String codigo, String nombre, Prestamo prestamoAsociado, Estado estado) {
         this.nombre = nombre;
         this.prestamoAsociado = prestamoAsociado;
+        this.estado = estado;
     }
 
     public String getNombre() {
@@ -25,6 +34,5 @@ public class Objeto {
     public void setPrestamoAsociado(Prestamo prestamoAsociado) {
         this.prestamoAsociado = prestamoAsociado;
     }
-
 
 }

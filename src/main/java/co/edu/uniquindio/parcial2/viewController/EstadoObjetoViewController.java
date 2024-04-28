@@ -4,12 +4,18 @@ package co.edu.uniquindio.parcial2.viewController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.parcial2.factory.ModelFactory;
+import co.edu.uniquindio.parcial2.model.Objeto;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class EstadoObjetoViewController {
+
+    ObservableList<Objeto> listaObservableObjeto;
+    ModelFactory factory = ModelFactory.getInstance();
 
     @FXML
     private ResourceBundle resources;
@@ -18,16 +24,16 @@ public class EstadoObjetoViewController {
     private URL location;
 
     @FXML
-    private TableColumn<?, ?> columNombre;
+    private TableColumn<Objeto, String> columNombre;
 
     @FXML
-    private TableColumn<?, ?> columCodigo;
+    private TableColumn<Objeto, String> columCodigo;
 
     @FXML
-    private TableView<?> tableEstadoObjeto;
+    private TableView<Objeto> tableEstadoObjeto;
 
     @FXML
-    private TableColumn<?, ?> columEstado;
+    private TableColumn<?, String> columEstado;
 
     @FXML
     void filtrarObjeto(ActionEvent event) {
@@ -46,10 +52,11 @@ public class EstadoObjetoViewController {
 
     @FXML
     void initialize() {
-        assert columNombre != null : "fx:id=\"columNombre\" was not injected: check your FXML file 'estadoObjetos.fxml'.";
-        assert columCodigo != null : "fx:id=\"columCodigo\" was not injected: check your FXML file 'estadoObjetos.fxml'.";
-        assert tableEstadoObjeto != null : "fx:id=\"tableEstadoObjeto\" was not injected: check your FXML file 'estadoObjetos.fxml'.";
-        assert columEstado != null : "fx:id=\"columEstado\" was not injected: check your FXML file 'estadoObjetos.fxml'.";
 
+
+    }
+
+    void dataBuilding() {
+        listaObservableObjeto.addAll(factory.getPrestamoUq().getListaObjetos());
     }
 }

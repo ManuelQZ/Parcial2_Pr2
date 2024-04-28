@@ -15,16 +15,15 @@ public class Prestamo {
     private Empleado empleadoAsociado;
     private ArrayList<Objeto> listaObjetosAsociados;
 
-    public Prestamo(String numeroPrestamo, Date fechaPrestamo, Date fechaEntrega, String descripcion) {
+    public Prestamo(String numeroPrestamo, Date fechaPrestamo, Date fechaEntrega, String descripcion, Cliente clienteAsociado, Empleado empleadoAsociado) {
         this.numeroPrestamo = numeroPrestamo;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaEntrega = fechaEntrega;
         this.descripcion = descripcion;
+        this.clienteAsociado = clienteAsociado;
+        this.empleadoAsociado = empleadoAsociado;
         this.listaObjetosAsociados = new ArrayList<>();
     }
-
-
-
 
     public String getNumeroPrestamo() {
         return numeroPrestamo;
@@ -60,6 +59,5 @@ public class Prestamo {
     public Cliente getClienteAsociado() {
         return clienteAsociado;
     }
-
 
 }

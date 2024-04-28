@@ -12,5 +12,8 @@ public class Cliente extends Persona{
     public ArrayList<Prestamo> getListaPrestamosAsociados() {
         return listaPrestamosAsociados;
     }
+    public void addPrestamo(Prestamo prestamo) {
+        listaPrestamosAsociados.add(prestamo);
+    }
 
 }
