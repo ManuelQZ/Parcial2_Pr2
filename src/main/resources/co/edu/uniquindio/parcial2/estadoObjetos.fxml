@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.parcial2.viewController.EstadoObjetos"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.viewController.EstadoObjetos">
+   <children>
+      <TableView fx:id="tableEstadoObjeto" layoutX="37.0" layoutY="152.0" prefHeight="200.0" prefWidth="524.0">
+        <columns>
+          <TableColumn fx:id="columCodigo" prefWidth="107.0" text="Codigó" />
+          <TableColumn fx:id="columNombre" prefWidth="186.0" text="Nombre" />
+            <TableColumn fx:id="columEstado" prefWidth="230.0" text="Estado" />
+        </columns>
+      </TableView>
+      <RadioButton layoutX="128.0" layoutY="88.0" mnemonicParsing="false" onAction="#objetoDisponible" text="Disponible" />
+      <RadioButton layoutX="383.0" layoutY="88.0" mnemonicParsing="false" onAction="#onjetoNoDisponible" text="No Disponible" />
+      <Separator layoutY="59.0" prefHeight="7.0" prefWidth="600.0" />
+      <Label layoutX="167.0" layoutY="19.0" text="Inventario Estado de Objetoss">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="276.0" layoutY="113.0" mnemonicParsing="false" onAction="#filtrarObjeto" text="Filtrar" />
+   </children>
 </AnchorPane>
