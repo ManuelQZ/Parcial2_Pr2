@@ -40,7 +40,7 @@ public class EstadoObjetoViewController {
     }
 
     @FXML
-    void onjetoNoDisponible(ActionEvent event) {
+    void objetoNoDisponible(ActionEvent event) {
 
     }
 
