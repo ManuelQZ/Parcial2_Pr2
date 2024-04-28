@@ -11,6 +11,7 @@ public class ModelFactory {
 
     private ModelFactory() {
         this.prestamoUq = new PrestamoUq();
+        this.generarDatos();
     }
 
     public static ModelFactory getInstance() {
@@ -48,10 +49,10 @@ public class ModelFactory {
         prestamoUq.getListaEmpleados().add(empleado3);
 
         // Generar datos para Prestamo
-        Prestamo prestamo1 = new Prestamo("001", new Date(), new Date(), "Prestamo 1", cliente1, empleado1);
-        Prestamo prestamo2 = new Prestamo("002", new Date(), new Date(), "Prestamo 2", cliente2, empleado2);
-        Prestamo prestamo3 = new Prestamo("003", new Date(), new Date(), "Prestamo 3", cliente1, empleado3);
-        Prestamo prestamo4 = new Prestamo("004", new Date(), new Date(), "Prestamo 4", cliente2, empleado1);
+        Prestamo prestamo1 = new Prestamo("001",2003 , new Date(), new Date(), "Prestamo 1", cliente1, empleado1);
+        Prestamo prestamo2 = new Prestamo("002",324234, new Date(), new Date(), "Prestamo 2", cliente2, empleado2);
+        Prestamo prestamo3 = new Prestamo("003",1234, new Date(), new Date(), "Prestamo 3", cliente1, empleado3);
+        Prestamo prestamo4 = new Prestamo("004",32100, new Date(), new Date(), "Prestamo 4", cliente2, empleado1);
 
         prestamoUq.getListaPrestamos().add(prestamo1);
         prestamoUq.getListaPrestamos().add(prestamo2);
@@ -65,10 +66,10 @@ public class ModelFactory {
         Objeto libro = new Objeto("004", "Libro de Texto", prestamo4, Objeto.Estado.NODISPONIBLE);
         Objeto cuaderno = new Objeto("005", "Cuaderno de Apuntes", prestamo1, Objeto.Estado.DISPONIBLE);
 
-        prestamoUq.getListaObjetos().add(portatil);
-        prestamoUq.getListaObjetos().add(microscopio);
-        prestamoUq.getListaObjetos().add(calculadora);
-        prestamoUq.getListaObjetos().add(libro);
-        prestamoUq.getListaObjetos().add(cuaderno);
+        prestamoUq.addObjeto(portatil);
+        prestamoUq.addObjeto(microscopio);
+        prestamoUq.addObjeto(calculadora);
+        prestamoUq.addObjeto(libro);
+        prestamoUq.addObjeto(cuaderno);
     }
 }

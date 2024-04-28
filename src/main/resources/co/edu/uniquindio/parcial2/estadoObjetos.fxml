@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.viewController.EstadoObjetoViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.viewController.EstadoObjetoViewController">
    <children>
-      <TableView fx:id="tableEstadoObjeto" layoutX="37.0" layoutY="152.0" prefHeight="200.0" prefWidth="524.0">
+      <TableView fx:id="tableEstadoObjeto" layoutX="45.0" layoutY="125.0" prefHeight="224.0" prefWidth="508.0">
         <columns>
-          <TableColumn fx:id="columCodigo" prefWidth="107.0" text="Codigó" />
-          <TableColumn fx:id="columNombre" prefWidth="186.0" text="Nombre" />
-            <TableColumn fx:id="columEstado" prefWidth="230.0" text="Estado" />
+          <TableColumn fx:id="columCodigo" prefWidth="138.0" text="Codigó" />
+          <TableColumn fx:id="columNombre" prefWidth="206.0" text="Nombre" />
+            <TableColumn fx:id="columEstado" prefWidth="179.0" text="Estado" />
         </columns>
       </TableView>
-      <RadioButton layoutX="128.0" layoutY="88.0" mnemonicParsing="false" onAction="#objetoDisponible" text="Disponible" />
-      <RadioButton layoutX="383.0" layoutY="88.0" mnemonicParsing="false" onAction="#objetoNoDisponible" text="No Disponible" />
-      <Separator layoutY="59.0" prefHeight="7.0" prefWidth="600.0" />
-      <Label layoutX="167.0" layoutY="19.0" text="Inventario Estado de Objetoss">
+      <RadioButton layoutX="109.0" layoutY="70.0" mnemonicParsing="false" onAction="#objetoDisponible" text="Disponible">
+         <toggleGroup>
+            <ToggleGroup fx:id="estado" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="386.0" layoutY="70.0" mnemonicParsing="false" onAction="#objetoNoDisponible" text="No Disponible" toggleGroup="$estado" />
+      <Text layoutX="12.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventario por estado de objetos">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold Italic" size="12.0" />
          </font>
-      </Label>
-      <Button layoutX="276.0" layoutY="113.0" mnemonicParsing="false" onAction="#filtrarObjeto" text="Filtrar" />
+      </Text>
+      <Line endX="474.0" layoutX="112.0" layoutY="23.0" startX="-100.0" />
    </children>
 </AnchorPane>

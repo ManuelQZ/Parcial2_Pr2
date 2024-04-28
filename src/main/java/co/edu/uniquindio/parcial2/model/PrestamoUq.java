@@ -19,10 +19,7 @@ public class PrestamoUq {
         this.listaClientes = new ArrayList<>();
         this.listaEmpleados = new ArrayList<>();
         this.listaObjetos = new ArrayList<>();
-    }
-
-    public void crearCliente(){
-
+        this.listaPrestamos = new ArrayList<>();
     }
 
     public ArrayList<Empleado> getListaEmpleados() {
@@ -43,6 +40,10 @@ public class PrestamoUq {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void addObjeto(Objeto objeto) {
+        listaObjetos.add(objeto);
     }
 
 

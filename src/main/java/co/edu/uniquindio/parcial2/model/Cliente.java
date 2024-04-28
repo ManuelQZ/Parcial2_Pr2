@@ -7,6 +7,7 @@ public class Cliente extends Persona{
     ArrayList<Prestamo> listaPrestamosAsociados;
     public Cliente(String nombre, String apellido, String cedula, String edad) {
         super(nombre, apellido, cedula, edad);
+
     }
 
     public ArrayList<Prestamo> getListaPrestamosAsociados() {

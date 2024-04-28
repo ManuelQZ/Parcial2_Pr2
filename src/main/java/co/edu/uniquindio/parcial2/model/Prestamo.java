@@ -6,6 +6,7 @@ import java.util.Date;
 public class Prestamo {
 
     private String numeroPrestamo;
+    private int deuda;
     private Date fechaPrestamo;
     private Date fechaEntrega;
     private String descripcion;
@@ -15,8 +16,9 @@ public class Prestamo {
     private Empleado empleadoAsociado;
     private ArrayList<Objeto> listaObjetosAsociados;
 
-    public Prestamo(String numeroPrestamo, Date fechaPrestamo, Date fechaEntrega, String descripcion, Cliente clienteAsociado, Empleado empleadoAsociado) {
+    public Prestamo(String numeroPrestamo, int deuda, Date fechaPrestamo, Date fechaEntrega, String descripcion, Cliente clienteAsociado, Empleado empleadoAsociado) {
         this.numeroPrestamo = numeroPrestamo;
+        this.deuda = deuda;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaEntrega = fechaEntrega;
         this.descripcion = descripcion;
@@ -60,4 +62,7 @@ public class Prestamo {
         return clienteAsociado;
     }
 
+    public String getDeuda() {
+        return "" + deuda;
+    }
 }

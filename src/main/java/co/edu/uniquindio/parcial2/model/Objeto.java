@@ -14,6 +14,7 @@ public class Objeto {
     }
 
     public Objeto(String codigo, String nombre, Prestamo prestamoAsociado, Estado estado) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.prestamoAsociado = prestamoAsociado;
         this.estado = estado;
@@ -35,4 +36,11 @@ public class Objeto {
         this.prestamoAsociado = prestamoAsociado;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getEstado() {
+        return estado.toString();
+    }
 }
