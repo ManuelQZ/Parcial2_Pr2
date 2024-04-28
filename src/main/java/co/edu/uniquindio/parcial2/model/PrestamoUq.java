@@ -5,17 +5,21 @@ import java.util.ArrayList;
 public class PrestamoUq {
 
     private String nombre;
-    
-    ArrayList<Cliente> listaClientes;
 
-    ArrayList<Empleado> listaEmpleados;
+    private ArrayList<Cliente> listaClientes;
 
-    ArrayList<Objeto> listaObjetos;
+    private ArrayList<Empleado> listaEmpleados;
 
-    ArrayList<Prestamo> listaPrestamos;
+    private ArrayList<Objeto> listaObjetos;
 
-    public PrestamoUq(String nombre) {
+    private ArrayList<Prestamo> listaPrestamos;
+
+    public PrestamoUq(String nombre, ArrayList<Objeto> listaObjetos) {
         this.nombre = nombre;
+        this.listaClientes = new ArrayList<>();
+        this.listaEmpleados = new ArrayList<>();
+        this.listaObjetos = listaObjetos;
+        this.listaPrestamos = new ArrayList<>();
     }
 
     public void crearCliente(){

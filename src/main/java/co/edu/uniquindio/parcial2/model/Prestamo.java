@@ -1,5 +1,6 @@
 package co.edu.uniquindio.parcial2.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Prestamo {
@@ -12,13 +13,14 @@ public class Prestamo {
     private Cliente clienteAsociado;
 
     private Empleado empleadoAsociado;
-
+    private ArrayList<Objeto> listaObjetosAsociados;
 
     public Prestamo(String numeroPrestamo, Date fechaPrestamo, Date fechaEntrega, String descripcion) {
         this.numeroPrestamo = numeroPrestamo;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaEntrega = fechaEntrega;
         this.descripcion = descripcion;
+        this.listaObjetosAsociados = new ArrayList<>();
     }
 
 
