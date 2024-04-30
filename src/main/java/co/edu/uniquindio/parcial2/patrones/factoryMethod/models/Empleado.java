@@ -1,3 +1,5 @@
+package co.edu.uniquindio.parcial2.patrones.factoryMethod.models;
+
 public abstract class Empleado {
     protected String nombre;
     protected String apellido;
@@ -15,4 +17,7 @@ public abstract class Empleado {
         this.salario = salario;
     }
 
+    public boolean descripcion() {
+        return false;
+    }
 }

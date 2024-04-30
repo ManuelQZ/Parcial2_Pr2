@@ -1,7 +1,9 @@
 package co.edu.uniquindio.parcial2.patrones.factoryMethod;
 
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.models.Empleado;
+
 public class App {
-    public static void main(String[] args) {
+    public static <FabricaEmpleado> void main(String[] args) {
         // Crear fábrica de empleados temporales
         FabricaEmpleado fabricaTemporales = new FabricaEmpleadosTemporales();
         // Crear empleado temporal utilizando la fábrica
