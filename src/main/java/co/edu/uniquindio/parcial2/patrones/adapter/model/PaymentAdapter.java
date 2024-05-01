@@ -1,6 +1,6 @@
-package co.edu.uniquindio.parcial2.patrones.adapter.model.;
+package co.edu.uniquindio.parcial2.patrones.adapter.model;
 
-public class PaymentAdapter implements ModernPaymentGateway() {
+public class PaymentAdapter implements ModernPaymentGateway {
     private LegacyPaymentSystem legacyPaymentSystem;
 
     public PaymentAdapter(LegacyPaymentSystem legacyPaymentSystem) {
