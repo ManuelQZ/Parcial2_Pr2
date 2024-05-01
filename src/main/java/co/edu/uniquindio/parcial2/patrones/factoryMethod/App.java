@@ -1,17 +1,19 @@
 package co.edu.uniquindio.parcial2.patrones.factoryMethod;
 
-public class App {
-    public static void main(String[] args) {
-        // Crear fábrica de empleados temporales
-        FabricaEmpleado fabricaTemporales = new FabricaEmpleadosTemporales();
-        // Crear empleado temporal utilizando la fábrica
-        Empleado empleadoTemporal = fabricaTemporales.crearEmpleado("Juan", "Perez", "123456789", "juan@example.com", "123456789", 1500, "2024-12-31");
-        System.out.println(empleadoTemporal.descripcion());
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.model.ElectrodomesticoFactory;
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.model.VehiculoFactory;
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.factory.ProductoFactory;
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.model.Producto;
 
-        // Crear fábrica de empleados permanentes
-        FabricaEmpleado fabricaPermanentes = new FabricaEmpleadosPermanentes();
-        // Crear empleado permanente utilizando la fábrica
-        Empleado empleadoPermanente = fabricaPermanentes.crearEmpleado("Maria", "Gomez", "987654321", "maria@example.com", "987654321", 2000, "500");
-        System.out.println(empleadoPermanente.descripcion());
+public class App {
+
+    public static void main(String[] args) {
+        ProductoFactory vehiculoFactory = new VehiculoFactory();
+        Producto coche = vehiculoFactory.createProducto();
+        coche.mostrarDetalles();
+
+        ProductoFactory electrodomesticoFactory = new ElectrodomesticoFactory();
+        Producto refrigerador = electrodomesticoFactory.createProducto();
+        refrigerador.mostrarDetalles();
     }
 }
