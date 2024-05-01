@@ -7,7 +7,7 @@
   <tabs>
     <Tab text="Buscador de objetos">
          <content>
-            <fx:include source="buscadorObjetos.fxml" />
+            <fx:include source="buscadorCliente.fxml" />
          </content></Tab>
     <Tab text="Estado objeto">
          <content>
