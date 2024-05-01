@@ -9,13 +9,6 @@
          <content>
             <fx:include source="buscadorCliente.fxml" />
          </content></Tab>
-    <Tab text="Estado objeto">
-         <content>
-           <fx:include source="estadoObjetos.fxml" />
-         </content></Tab>
-    <Tab text="Prestamo cliente">
-         <content>
-           <fx:include source="prestamosCliente.fxml" />
-         </content></Tab>
+
   </tabs>
 </TabPane>

@@ -49,10 +49,10 @@ public class ModelFactory {
         prestamoUq.getListaEmpleados().add(empleado3);
 
         // Generar datos para Prestamo
-        Prestamo prestamo1 = new Prestamo("001",2003 , new Date(), new Date(), "Prestamo 1", cliente1, empleado1);
-        Prestamo prestamo2 = new Prestamo("002",324234, new Date(), new Date(), "Prestamo 2", cliente2, empleado2);
-        Prestamo prestamo3 = new Prestamo("003",1234, new Date(), new Date(), "Prestamo 3", cliente1, empleado3);
-        Prestamo prestamo4 = new Prestamo("004",32100, new Date(), new Date(), "Prestamo 4", cliente2, empleado1);
+        Prestamo prestamo1 = new Prestamo("001", new Date(), new Date(), "Prestamo 1", cliente1, empleado1);
+        Prestamo prestamo2 = new Prestamo("002", new Date(), new Date(), "Prestamo 2", cliente2, empleado2);
+        Prestamo prestamo3 = new Prestamo("003",new Date(), new Date(), "Prestamo 3", cliente1, empleado3);
+        Prestamo prestamo4 = new Prestamo("004", new Date(), new Date(), "Prestamo 4", cliente2, empleado1);
 
         prestamoUq.getListaPrestamos().add(prestamo1);
         prestamoUq.getListaPrestamos().add(prestamo2);

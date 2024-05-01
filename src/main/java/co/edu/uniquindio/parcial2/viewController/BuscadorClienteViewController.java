@@ -50,11 +50,11 @@ public class BuscadorClienteViewController {
         void searchBuscar(ActionEvent event) {
                 listaObservableCliente.clear();
                 String cedula = txtBuscar.getText();
-                ArrayList<Cliente> listaCliente = factory.getPrestamoUq().getListaObjetos();
+                ArrayList<Cliente> listaCliente = factory.getPrestamoUq().getListaClientes();
 
                 for (Cliente cliente: listaCliente) {
                         if (cedula.equals(cliente.getCedula())) {
-                                listaObservableCliente.add(objeto);
+                                listaObservableCliente.add(cliente);
                         }
                 }
         }
