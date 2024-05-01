@@ -12,19 +12,18 @@ public class Prestamo {
     private String descripcion;
 
     private Cliente clienteAsociado;
-
     private Empleado empleadoAsociado;
     private ArrayList<Objeto> listaObjetosAsociados;
 
-    public Prestamo(String numeroPrestamo, int deuda, Date fechaPrestamo, Date fechaEntrega, String descripcion, Cliente clienteAsociado, Empleado empleadoAsociado) {
+    public Prestamo(String numeroPrestamo, Date fechaPrestamo, Date fechaEntrega, String descripcion, Cliente clienteAsociado, Empleado empleadoAsociado) {
         this.numeroPrestamo = numeroPrestamo;
-        this.deuda = deuda;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaEntrega = fechaEntrega;
         this.descripcion = descripcion;
         this.clienteAsociado = clienteAsociado;
         this.empleadoAsociado = empleadoAsociado;
         this.listaObjetosAsociados = new ArrayList<>();
+        this.sincronizarPrestamo();
     }
 
     public String getNumeroPrestamo() {
@@ -58,11 +57,23 @@ public class Prestamo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
     public Cliente getClienteAsociado() {
         return clienteAsociado;
     }
 
-    public String getDeuda() {
-        return "" + deuda;
+    public ArrayList<Objeto> getListaObjetosAsociados() {
+        return listaObjetosAsociados;
+    }
+
+    public void addObjetoAsociado(Objeto objeto) {
+        objeto.sumarPrestamo();
+        listaObjetosAsociados.add(objeto);
+    }
+
+
+    public void sincronizarPrestamo() {
+        this.clienteAsociado.sumarPrestamo();
+        this.empleadoAsociado.sumarPrestamo();
     }
 }

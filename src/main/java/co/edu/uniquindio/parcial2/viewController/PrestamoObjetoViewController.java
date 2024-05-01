@@ -13,7 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class PrestamosClienteViewController {
+public class PrestamoObjetoViewController {
 
     @FXML
     private ResourceBundle resources;

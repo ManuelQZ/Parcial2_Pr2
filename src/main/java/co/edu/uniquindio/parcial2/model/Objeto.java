@@ -7,6 +7,8 @@ public class Objeto {
     private Prestamo prestamoAsociado;
 
     private Estado estado;
+    private int  contadorPrestamo;
+
 
     public enum Estado {
         DISPONIBLE,
@@ -18,6 +20,7 @@ public class Objeto {
         this.nombre = nombre;
         this.prestamoAsociado = prestamoAsociado;
         this.estado = estado;
+        this.contadorPrestamo = 0;
     }
 
     public String getNombre() {
@@ -42,5 +45,13 @@ public class Objeto {
 
     public String getEstado() {
         return estado.toString();
+    }
+
+    public int getContadorPrestamo() {
+        return contadorPrestamo;
+    }
+
+    public void sumarPrestamo() {
+        this.contadorPrestamo += 1;
     }
 }
