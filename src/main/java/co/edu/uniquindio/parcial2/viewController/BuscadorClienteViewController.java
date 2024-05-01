@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.parcial2.factory.ModelFactory;
+import co.edu.uniquindio.parcial2.model.Cliente;
 import co.edu.uniquindio.parcial2.model.Objeto;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -28,32 +29,32 @@ public class BuscadorClienteViewController {
         private Button btBuscar;
 
         @FXML
-        private TableColumn<Objeto, String> columnCodigo;
+        private TableColumn<Cliente, String> columnNombre;
 
         @FXML
-        private TableColumn<Objeto, String> columnEstado;
+        private TableColumn<Cliente, String> columnEdad;
 
         @FXML
-        private TableColumn<Objeto, String> columnNombre;
+        private TableColumn<Cliente, String> columnCedula;
 
         @FXML
-        private TableView<Objeto> tbBuscar;
+        private TableView<Cliente> tbBuscar;
 
         @FXML
         private TextField txtBuscar;
 
         // Se Inicia la clase
-        ObservableList<Objeto> listaObservableObjeto = FXCollections.observableArrayList();
+        ObservableList<Cliente> listaObservableCliente = FXCollections.observableArrayList();
         ModelFactory factory = ModelFactory.getInstance();
         @FXML
         void searchBuscar(ActionEvent event) {
-                listaObservableObjeto.clear();
-                String codigo = txtBuscar.getText();
-                ArrayList<Objeto> listaObjetos = factory.getPrestamoUq().getListaObjetos();
+                listaObservableCliente.clear();
+                String cedula = txtBuscar.getText();
+                ArrayList<Cliente> listaCliente = factory.getPrestamoUq().getListaObjetos();
 
-                for (Objeto objeto: listaObjetos) {
-                        if (codigo.equals(objeto.getCodigo())) {
-                                listaObservableObjeto.add(objeto);
+                for (Cliente cliente: listaCliente) {
+                        if (cedula.equals(cliente.getCedula())) {
+                                listaObservableCliente.add(objeto);
                         }
                 }
         }
@@ -62,13 +63,13 @@ public class BuscadorClienteViewController {
         void initialize() {
                 initDataBinding();
                 tbBuscar.getItems().clear();
-                tbBuscar.setItems(listaObservableObjeto);
+                tbBuscar.setItems(listaObservableCliente);
         }
 
         public void initDataBinding() {
                 columnNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
-                columnCodigo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCodigo()));
-                columnEstado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEstado()));
+                columnEdad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEdad()));
+                columnCedula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCedula()));
         }
 
 
