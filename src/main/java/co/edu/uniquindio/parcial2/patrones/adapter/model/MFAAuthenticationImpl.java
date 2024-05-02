@@ -1,5 +1,7 @@
 package co.edu.uniquindio.parcial2.patrones.adapter.model;
 
+import co.edu.uniquindio.parcial2.patrones.adapter.services.MFAAuthentication;
+
 public class MFAAuthenticationImpl implements MFAAuthentication {
     @Override
     public boolean authenticateWithOTP(String username, String otp) {

@@ -1,5 +1,8 @@
 package co.edu.uniquindio.parcial2.patrones.adapter.model;
 
+import co.edu.uniquindio.parcial2.patrones.adapter.services.LibraryAuthentication;
+import co.edu.uniquindio.parcial2.patrones.adapter.services.MFAAuthentication;
+
 public class AuthenticationAdapter implements LibraryAuthentication {
     private MFAAuthentication mfaAuthentication;
     
