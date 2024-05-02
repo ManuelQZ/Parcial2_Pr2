@@ -1,19 +1,20 @@
 package co.edu.uniquindio.parcial2.patrones.factoryMethod.model;
 
-public class Bicicleta extends Producto{
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.factory.services.Producto;
 
-    private final int capacidadPasajeros;
+public class Bicicleta extends Vehiculo implements Producto {
 
-    public Bicicleta(String nombre, double precioAlquiler) {
-        super(nombre, precioAlquiler);
-        this.capacidadPasajeros = 1;
+    public Bicicleta(String nombre, String marca, String placa, int precio) {
+        super(nombre, marca, placa, precio);
     }
 
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Tipo: Bicicleta");
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Precio de alquiler por día: $" + getPrecioAlquiler());
-        System.out.println("Capacidad de pasajeros: " + capacidadPasajeros);
+    public String mostrarDetalles() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Bicicleta{} " + super.toString();
     }
 }

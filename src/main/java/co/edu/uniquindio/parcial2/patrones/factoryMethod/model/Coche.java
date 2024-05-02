@@ -1,20 +1,20 @@
 package co.edu.uniquindio.parcial2.patrones.factoryMethod.model;
 
-public class Coche extends Producto {
+import co.edu.uniquindio.parcial2.patrones.factoryMethod.factory.services.Producto;
 
-    private int capacidadPasajeros;
+public class Coche extends Vehiculo implements Producto {
 
-    public Coche(String nombre, double precioAlquiler) {
-        super(nombre, precioAlquiler);
-        this.capacidadPasajeros = 5;
+    public Coche(String nombre, String marca, String placa, int precio) {
+        super(nombre, marca, placa, precio);
     }
 
-    // Método para mostrar detalles específicos del coche
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Tipo: Coche");
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Precio de alquiler por día: $" + getPrecioAlquiler());
-        System.out.println("Capacidad de pasajeros: " + capacidadPasajeros);
+    public String mostrarDetalles() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Coche{} " + super.toString();
     }
 }
